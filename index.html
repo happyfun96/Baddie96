@@ -9,14 +9,13 @@
         * { box-sizing: border-box; }
         body { 
             margin: 0; font-family: 'Arial', sans-serif; 
-            /* Background Radial Gelap Mewah */
             background: radial-gradient(circle at top, #3a0000 0%, #1a0000 30%, #000 100%);
             color: #fff; overflow-x: hidden;
         }
 
-        /* 1. TOPBAR (BRAND & TOMBOL SULTAN) */
+        /* 1. TOPBAR (BRAND & TOMBOL SEPERTI GAMBAR) */
         .topbar {
-            background: linear-gradient(to right, #2a0000, #4d0000, #2a0000);
+            background: linear-gradient(to bottom, #2a0000, #4d0000, #2a0000);
             border-bottom: 2px solid gold;
             padding: 10px 50px;
             display: flex; justify-content: space-between; align-items: center;
@@ -60,9 +59,8 @@
             font-weight: bold; z-index: 100; transition: 0.3s;
         }
         .next { right: 15px; } .prev { left: 15px; }
-        .prev:hover, .next:hover { background: #fff; color: #ff0000; }
 
-        /* 3. MENU IKON (DI BAWAH SLIDER) */
+        /* 3. NAVBAR MENU IKON */
         .navbar { background: #111; padding: 15px 0; border-bottom: 2px solid #ff0000; }
         .nav-menu {
             list-style: none; padding: 0; margin: 0;
@@ -82,29 +80,23 @@
             border-top: 3px solid #ff0000; border-bottom: 3px solid #ff0000;
             padding: 35px; text-align: center;
             box-shadow: inset 0 0 50px #440000, 0 0 30px #ff0000;
-            z-index: 10;
         }
         
-        /* Gambar Naga Realistik (Memanggil Gambar .png Transparan HD) */
+        /* Gambar Naga Realistik HD */
         .dragon {
-            position: absolute; width: 180px; height: auto;
+            position: absolute; width: 220px; height: 200px;
             filter: drop-shadow(0 0 15px #ff0000);
             z-index: 100;
-            pointer-events: none;
-            /* Animasi Naga Naik Turun Pelan */
+            background-size: contain; background-repeat: no-repeat; background-position: center;
             animation: dragonFloat 2.5s infinite alternate ease-in-out;
         }
-        /* Menggunakan link gambar naga realistik yang stabil */
         .dragon-left { 
-            top: -40px; left: -100px; 
-            transform: scaleX(-1); 
-            background: url('https://www.pngmart.com/files/16/Red-Dragon-Transparent-Background.png') no-repeat center/contain;
-            height: 200px; /* Sesuaikan tinggi naga */
+            top: -60px; left: -120px; transform: scaleX(-1); 
+            background-image: url('https://www.pngmart.com/files/16/Red-Dragon-Transparent-Background.png');
         }
         .dragon-right { 
-            top: -40px; right: -100px; 
-            background: url('https://www.pngmart.com/files/16/Red-Dragon-Transparent-Background.png') no-repeat center/contain;
-            height: 200px; /* Sesuaikan tinggi naga */
+            top: -60px; right: -120px; 
+            background-image: url('https://www.pngmart.com/files/16/Red-Dragon-Transparent-Background.png');
         }
 
         @keyframes dragonFloat { from { transform: translateY(0); } to { transform: translateY(-20px); } }
@@ -115,14 +107,13 @@
             font-family: 'Courier New', monospace; display: block; margin-top: 15px;
         }
 
-        /* 5. LIVE CHAT SULTAN (MEMBESAR MENGEKIL) */
+        /* LIVE CHAT */
         .live-chat { 
             position: fixed; bottom: 30px; right: 30px; 
             background: linear-gradient(to bottom, #fff1a8, #ffd700); 
             color: #111; padding: 18px 35px; border-radius: 50px; 
             font-weight: bold; text-decoration: none; 
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6); 
-            z-index: 9999;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6); z-index: 9999;
             animation: pulseChat 1.2s infinite;
         }
         @keyframes pulseChat { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
@@ -140,15 +131,9 @@
 
 <div class="slider-container">
     <div class="slides" id="slider">
-        <div class="slide">
-            <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?q=80&w=1200&auto=format&fit=crop" alt="Promo 1">
-        </div>
-        <div class="slide">
-            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop" alt="Promo 2">
-        </div>
-        <div class="slide">
-            <img src="https://placehold.jp/40/000000/ff0000/1200x380.png?text=CLICKBADDIE+EVENT" alt="Promo 3">
-        </div>
+        <div class="slide"><img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?q=80&w=1200&auto=format&fit=crop"></div>
+        <div class="slide"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop"></div>
+        <div class="slide"><img src="https://placehold.jp/40/000000/ff0000/1200x380.png?text=CLICKBADDIE+EVENT"></div>
     </div>
     <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
     <button class="next" onclick="moveSlide(1)">&#10095;</button>
@@ -169,8 +154,7 @@
 
 <div class="jackpot-wrap">
     <div class="dragon dragon-left"></div>
-    <div class="dragon dragon-right" style="transform: scale(1);"></div>
-    
+    <div class="dragon dragon-right"></div>
     <div style="color: #ff0000; font-weight: bold; letter-spacing: 5px; font-size: 20px;">PROGRESSIVE JACKPOT</div>
     <div class="jackpot-amount" id="jackpot-counter">6.091.718.406</div>
 </div>
@@ -178,20 +162,16 @@
 <a href="#" class="live-chat">💬 Live Chat</a>
 
 <script>
-    // Script SLIDER otomatis & manual
+    // Slider
     let currentSlide = 0;
     const slides = document.getElementById('slider');
-    const totalSlides = 3;
-
     function moveSlide(step) {
-        currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+        currentSlide = (currentSlide + step + 3) % 3;
         slides.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
+    setInterval(() => moveSlide(1), 4500);
 
-    // Auto geser tiap 4 detik
-    setInterval(() => moveSlide(1), 4000);
-
-    // Script ANGKA GERAK (JACKPOT)
+    // Jackpot Counter
     let val = 6091718406;
     setInterval(() => {
         val += Math.floor(Math.random() * 2500);
