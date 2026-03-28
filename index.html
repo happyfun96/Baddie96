@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baddie96 - Situs Terpercaya</title>
+    <title>Situs Saya - Terpercaya</title>
     <style>
         /* DASHBOARD STYLE */
         body { 
@@ -15,7 +15,7 @@
             overflow-x: hidden;
         }
 
-        /* HEADER MEWAH */
+        /* HEADER */
         header { 
             background: linear-gradient(to bottom, #1a1a1a, #000); 
             padding: 15px 50px; 
@@ -30,16 +30,15 @@
             font-size: 28px; 
             text-shadow: 0 0 15px gold; 
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         /* BANNER UTAMA POLOS MEWAH */
         .hero { 
-            /* Menghapus gambar, diganti gradasi hitam ke abu-abu gelap */
             background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
             padding: 120px 20px; 
             text-align: center; 
             border-bottom: 3px solid gold; 
-            position: relative;
         }
         
         /* BOX JACKPOT BERSINAR */
@@ -53,6 +52,8 @@
             padding: 25px; 
             box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); 
             text-align: center; 
+            position: relative;
+            z-index: 10;
         }
         .jackpot-title { 
             color: gold; 
@@ -94,34 +95,6 @@
         }
         .btn:hover { transform: translateY(-5px); filter: brightness(1.2); }
 
-        /* TABEL BUKTI JACKPOT */
-        .section-title { 
-            color: gold; 
-            font-weight: bold; 
-            border-left: 5px solid gold; 
-            padding-left: 15px; 
-            margin: 50px 5% 20px; 
-            text-align: left; 
-            font-size: 22px;
-        }
-        .proof-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 0 5%;
-            margin-bottom: 50px;
-        }
-        .proof-card {
-            background: #fff;
-            color: #333;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 14px;
-            border-top: 5px solid gold;
-        }
-        .proof-card b { color: #d40000; }
-        .status-ok { color: green; font-weight: bold; }
-
         /* FLOATING CHAT */
         .live-chat { 
             position: fixed; 
@@ -143,12 +116,14 @@
 
 <header>
     <div class="logo">CLICKBADDIE</div>
-    <div style="color: gold;">SELAMAT DATANG DI CLICKBADDIE</div>
+    
+    <div style="color: gold; font-size: 14px;">SITUS RESMI DAN TERPERCAYA</div>
 </header>
 
 <div class="hero">
-    <h2 style="color: gold; margin: 0; letter-spacing: 2px;">SITUS TERPERCAYA DENGAN</h2>
-    <h1 style="font-size: 55px; margin: 10px 0; text-shadow: 2px 2px 10px #000;">BONUS TERBADASS</h1>
+    <h2 style="color: gold; margin: 0; letter-spacing: 2px; font-size: clamp(18px, 4vw, 24px);">SITUS TERPERCAYA DENGAN</h2>
+    <h1 style="font-size: clamp(30px, 8vw, 55px); margin: 10px 0; text-shadow: 2px 2px 10px #000;">BONUS TERBADASS</h1>
+    
     <div class="btn-box">
         <a href="#" class="btn btn-login">LOGIN</a>
         <a href="#" class="btn btn-daftar">DAFTAR</a>
@@ -160,24 +135,16 @@
     <div class="jackpot-amount" id="jackpot-counter">6.091.718.406</div>
 </div>
 
-<div class="section-title">BUKTI JACKPOT HARI INI</div>
-<div class="proof-container">
-    <div class="proof-card">User: <b>AMB***9</b><br>WD: Rp 1.500.000<br>Status: <span class="status-ok">SUCCESS</span></div>
-    <div class="proof-card">User: <b>GAS***03</b><br>WD: Rp 5.250.000<br>Status: <span class="status-ok">SUCCESS</span></div>
-    <div class="proof-card">User: <b>HUM***02</b><br>WD: Rp 800.000<br>Status: <span class="status-ok">SUCCESS</span></div>
-    <div class="proof-card">User: <b>PRO***04</b><br>WD: Rp 12.000.000<br>Status: <span class="status-ok">SUCCESS</span></div>
-</div>
-
 <a href="https://wa.me/628123456789" class="live-chat">💬 Hubungi Live Chat</a>
 
 <script>
     // SCRIPT ANGKA GERAK (JACKPOT)
     let startVal = 6091718406;
     function updateJackpot() {
-        startVal += Math.floor(Math.random() * 1500); // Nambah angka acak
+        startVal += Math.floor(Math.random() * 1500); 
         document.getElementById("jackpot-counter").innerText = startVal.toLocaleString('id-ID');
     }
-    setInterval(updateJackpot, 1500); // Update setiap 1.5 detik
+    setInterval(updateJackpot, 1500); 
 </script>
 
 </body>
