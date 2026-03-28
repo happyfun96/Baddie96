@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLICKBADDIE - FULL SULTAN EDITION</title>
+    <title>CLICKBADDIE - MANUAL UPLOAD EDITION</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; }
@@ -13,84 +13,63 @@
             color: #fff; overflow-x: hidden;
         }
 
-        /* 1. TOPBAR: BRAND & LOGIN/DAFTAR (Sesuai Kotak Merah Kamu) */
+        /* TOPBAR: BRAND & TOMBOL */
         .topbar {
             background: linear-gradient(to bottom, #2a0000, #4d0000, #2a0000);
             border-bottom: 2px solid gold;
-            padding: 10px 50px;
+            padding: 10px 20px;
             display: flex; justify-content: space-between; align-items: center;
             position: sticky; top: 0; z-index: 1000;
         }
-        .brand { 
-            color: gold; font-weight: bold; font-size: 26px; 
-            text-shadow: 0 0 10px gold; text-transform: uppercase; text-decoration: none; 
-        }
-        .btn-top { padding: 8px 18px; border-radius: 4px; font-weight: bold; font-size: 12px; text-decoration: none; text-transform: uppercase; }
+        .brand { color: gold; font-weight: bold; font-size: 24px; text-shadow: 0 0 10px gold; text-transform: uppercase; text-decoration: none; }
+        .btn-top { padding: 8px 15px; border-radius: 4px; font-weight: bold; font-size: 11px; text-decoration: none; }
         .btn-masuk { background: #1a1a1a; color: gold; border: 1px solid gold; margin-right: 5px; }
-        .btn-daftar { background: linear-gradient(to bottom, #ffd700, #c99600); color: #111; border: none; box-shadow: 0 0 10px gold; }
+        .btn-daftar { background: linear-gradient(to bottom, #ffd700, #c99600); color: #111; border: none; }
 
-        /* 2. SLIDER AREA (BANNER GESER) */
+        /* SLIDER AREA */
         .slider-container {
-            max-width: 1100px; margin: 20px auto;
+            max-width: 1000px; margin: 15px auto;
             position: relative; overflow: hidden;
-            border: 2px solid #ff0000; border-radius: 15px;
-            height: 350px; box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+            border: 2px solid #ff0000; border-radius: 10px;
+            height: 300px; 
         }
-        .slides { display: flex; height: 100%; transition: 0.5s ease-in-out; }
+        .slides { display: flex; height: 100%; transition: 0.5s; }
         .slide { min-width: 100%; height: 100%; }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* 3. MENU IKON NAVIGASI */
-        .navbar { background: #111; padding: 15px 0; border-bottom: 2px solid #ff0000; }
-        .nav-menu { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .nav-item { text-align: center; color: #fff; text-decoration: none; font-size: 11px; width: 80px; transition: 0.3s; }
-        .nav-item i { display: block; font-size: 24px; color: #ff0000; margin-bottom: 5px; text-shadow: 0 0 10px #ff0000; }
-        .nav-item:hover { transform: translateY(-5px); color: gold; }
+        /* MENU IKON */
+        .navbar { background: #111; padding: 10px 0; border-bottom: 2px solid #ff0000; }
+        .nav-menu { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 15px; }
+        .nav-item { text-align: center; color: #fff; text-decoration: none; font-size: 10px; width: 60px; }
+        .nav-item i { display: block; font-size: 20px; color: #ff0000; margin-bottom: 3px; }
 
-        /* 4. JACKPOT & NAGA (DRAGON FRAME) */
+        /* JACKPOT & NAGA MANUAL */
         .jackpot-wrap {
-            max-width: 850px; margin: 60px auto 40px;
+            max-width: 800px; margin: 50px auto;
             position: relative; background: rgba(0,0,0,0.9);
             border-top: 3px solid #ff0000; border-bottom: 3px solid #ff0000;
-            padding: 35px; text-align: center;
-            box-shadow: inset 0 0 50px #440000, 0 0 30px #ff0000;
+            padding: 30px; text-align: center;
+            box-shadow: 0 0 20px #ff0000;
         }
+        
+        /* INI CARA PANGGIL NAGA YANG KAMU UPLOAD */
         .dragon {
-            position: absolute; width: 180px; height: auto;
+            position: absolute; width: 150px; height: auto;
             z-index: 100; top: -50px;
-            filter: drop-shadow(0 0 15px #ff0000);
-            animation: move 2.5s infinite alternate ease-in-out;
+            animation: move 2s infinite alternate ease-in-out;
         }
-        .dragon-left { left: -100px; transform: scaleX(-1); }
-        .dragon-right { right: -100px; }
-        @keyframes move { from { transform: translateY(0); } to { transform: translateY(-20px); } }
+        .dragon-left { left: -80px; transform: scaleX(-1); }
+        .dragon-right { right: -80px; }
+        @keyframes move { from { transform: translateY(0); } to { transform: translateY(-15px); } }
 
-        .jackpot-amount { 
-            font-size: clamp(35px, 10vw, 65px); font-weight: 900; 
-            color: #fff; text-shadow: 0 0 25px #ff0000; font-family: 'Courier New', monospace; 
-        }
-
-        /* 5. BUKTI JACKPOT (BAGIAN BAWAH) */
-        .proof-section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        .section-title { 
-            color: gold; border-left: 4px solid gold; padding-left: 10px; 
-            margin-bottom: 20px; font-weight: bold; font-size: 20px;
-        }
-        .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .proof-card { background: #111; border: 1px solid #333; border-radius: 10px; padding: 15px; text-align: center; border-bottom: 2px solid gold; }
-        .proof-img { width: 100%; border-radius: 5px; margin-bottom: 10px; border: 1px solid #444; }
-        .proof-card b { color: gold; display: block; font-size: 14px; margin-bottom: 5px; }
-        .proof-card p { font-size: 11px; color: #ccc; line-height: 1.4; margin: 0; }
-
-        /* LIVE CHAT */
-        .live-chat { position: fixed; bottom: 25px; right: 25px; background: #ff0000; color: #fff; padding: 15px 35px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 0 20px #ff0000; z-index: 9999; }
+        .jackpot-amount { font-size: 40px; font-weight: 900; color: #fff; text-shadow: 0 0 15px #ff0000; font-family: monospace; }
     </style>
 </head>
 <body>
 
 <header class="topbar">
     <a href="#" class="brand">CLICKBADDIE</a>
-    <div class="top-actions">
+    <div>
         <a href="#" class="btn-top btn-masuk">MASUK</a>
         <a href="#" class="btn-top btn-daftar">DAFTAR</a>
     </div>
@@ -98,70 +77,38 @@
 
 <div class="slider-container">
     <div class="slides" id="slider">
-        <div class="slide"><img src="banner1.jpg" onerror="this.src='https://via.placeholder.com/1100x350/000000/ff0000?text=PROMO+NEW+MEMBER'"></div>
-        <div class="slide"><img src="https://via.placeholder.com/1100x350/220000/ffffff?text=EVENT+JACKPOT+MINGGUAN"></div>
+        <div class="slide"><img src="banner1.jpg"></div>
+        <div class="slide"><img src="https://via.placeholder.com/1000x300/200000/ffffff?text=BANNER+2"></div>
     </div>
 </div>
 
 <nav class="navbar">
     <div class="nav-menu">
         <a href="#" class="nav-item"><i class="fas fa-home"></i><span>BERANDA</span></a>
-        <a href="#" class="nav-item"><i class="fas fa-fire"></i><span>HOT GAMES</span></a>
         <a href="#" class="nav-item"><i class="fas fa-gamepad"></i><span>SLOT</span></a>
-        <a href="#" class="nav-item"><i class="fas fa-futbol"></i><span>SPORT</span></a>
         <a href="#" class="nav-item"><i class="fas fa-crown"></i><span>CASINO</span></a>
-        <a href="#" class="nav-item"><i class="fas fa-fish"></i><span>FISHING</span></a>
         <a href="#" class="nav-item"><i class="fas fa-gift"></i><span>PROMOSI</span></a>
     </div>
 </nav>
 
 <div class="jackpot-wrap">
-    <img src="naga.png" class="dragon dragon-left" onerror="this.style.display='none'">
-    <img src="naga.png" class="dragon dragon-right" onerror="this.style.display='none'">
-    <div style="color: #ff0000; font-weight: bold; letter-spacing: 5px; margin-bottom: 15px;">PROGRESSIVE JACKPOT</div>
-    <div class="jackpot-amount" id="jackpot-counter">6.091.192.779</div>
+    <img src="naga.png" class="dragon dragon-left">
+    <img src="naga.png" class="dragon dragon-right">
+    
+    <div style="color: #ff0000; font-weight: bold; letter-spacing: 3px;">PROGRESSIVE JACKPOT</div>
+    <div class="jackpot-amount" id="jackpot-counter">6.091.718.406</div>
 </div>
-
-<div class="proof-section">
-    <div class="section-title">BUKTI JACKPOT HARI INI</div>
-    <div class="proof-grid">
-        <div class="proof-card">
-            <img src="https://via.placeholder.com/200x120?text=BUKTI+TRANSFER" class="proof-img">
-            <b>AM8*2**9</b>
-            <p>terimakasih clickbet88 situs paling gacor depo kecil menang besar.</p>
-        </div>
-        <div class="proof-card">
-            <img src="https://via.placeholder.com/200x120?text=BUKTI+TRANSFER" class="proof-img">
-            <b>HUMGudangA**02</b>
-            <p>mantap banget di clickbet88 depo tipis langsung maxwin 🔥.</p>
-        </div>
-        <div class="proof-card">
-            <img src="https://via.placeholder.com/200x120?text=BUKTI+TRANSFER" class="proof-img">
-            <b>GA SDapur**03</b>
-            <p>rekomendasi terbaik clickbet88 gacor parah auto cuan.</p>
-        </div>
-        <div class="proof-card">
-            <img src="https://via.placeholder.com/200x120?text=BUKTI+TRANSFER" class="proof-img">
-            <b>ProjectZ**04</b>
-            <p>main santai di clickbet88 tapi hasilnya luar biasa.</p>
-        </div>
-    </div>
-</div>
-
-<a href="#" class="live-chat">💬 Live Chat</a>
 
 <script>
-    // Slider Logic
-    let curSlide = 0;
+    let currentSlide = 0;
     setInterval(() => {
-        curSlide = (curSlide + 1) % 2;
-        document.getElementById('slider').style.transform = `translateX(-${curSlide * 100}%)`;
-    }, 4500);
+        currentSlide = (currentSlide + 1) % 2;
+        document.getElementById('slider').style.transform = `translateX(-${currentSlide * 100}%)`;
+    }, 4000);
 
-    // Jackpot Logic
-    let val = 6091192779;
+    let val = 6091718406;
     setInterval(() => {
-        val += Math.floor(Math.random() * 2500);
+        val += Math.floor(Math.random() * 2000);
         document.getElementById("jackpot-counter").innerText = val.toLocaleString('id-ID');
     }, 1500);
 </script>
