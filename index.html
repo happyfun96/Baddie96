@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Jackpot Keren</title>
+    <style>
+        body { background-color: #111; color: gold; text-align: center; font-family: sans-serif; padding-top: 50px; }
+        .box { border: 2px solid gold; display: inline-block; padding: 20px; border-radius: 20px; background: black; }
+        h1 { font-size: 50px; margin: 0; }
+        .btn { background: gold; color: black; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>PROGRESSIVE JACKPOT</p>
+        <h1 id="jackpot">6.091.717.358</h1>
+    </div>
+    <br>
+    <a href="https://wa.me/nomor-kamu" class="btn">LIVE CHAT SEKARANG</a>
+
+    <script>
+        // Kode ini yang bikin angka gerak otomatis
+        let angka = 6091717358;
+        setInterval(() => {
+            angka += Math.floor(Math.random() * 500); // Nambah angka acak
+            document.getElementById("jackpot").innerText = angka.toLocaleString('id-ID');
+        }, 1000);
+    </script>
+</body>
+</html>
