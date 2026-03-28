@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLICKBADDIE - NAGA MERAH DEWA</title>
+    <title>CLICKBADDIE - RED DRAGON REBORN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; }
@@ -41,7 +41,8 @@
             max-width: 1100px; margin: 20px auto;
             border: 2px solid #ff0000; border-radius: 15px;
             height: 350px; overflow: hidden;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1614294149010-950b698f72c0?q=80&w=2070&auto=format&fit=crop');
+            /* Menggunakan gambar stabil dari server publik */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.jp/40/000000/ff0000/1000x400.png?text=CLICKBADDIE+BANNER');
             background-size: cover; background-position: center;
             display: flex; align-items: center; justify-content: center;
             box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
@@ -49,7 +50,7 @@
         .hero-text h1 { font-size: 45px; text-align: center; text-shadow: 0 0 20px #ff0000; margin: 0; }
         .btn-main { background: #ff0000; color: #fff; border: none; padding: 15px 40px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 20px; box-shadow: 0 0 15px #ff0000; }
 
-        /* KOTAK JACKPOT BINGKAI NAGA (KOTAK MERAH BAWAH) */
+        /* KOTAK JACKPOT DENGAN NAGA CSS (KOTAK MERAH BAWAH) */
         .jackpot-wrap {
             max-width: 850px; margin: 60px auto;
             position: relative;
@@ -59,21 +60,22 @@
             box-shadow: inset 0 0 50px #440000, 0 0 25px #ff0000;
         }
         
-        /* Gambar Naga Kiri-Kanan */
+        /* RAHASIA: NAGA MURNI PAKAI KODE CSS IKON */
         .dragon-left, .dragon-right {
-            position: absolute; top: -30px; width: 150px; height: auto;
+            position: absolute; top: -20px; font-size: 120px; color: #ff0000;
             filter: drop-shadow(0 0 15px #ff0000);
             z-index: 100;
             animation: dragonFloat 2s infinite alternate ease-in-out;
+            pointer-events: none; /* Biar naga ga ganggu klik */
         }
-        .dragon-left { left: -80px; transform: scaleX(-1); }
-        .dragon-right { right: -80px; }
+        .dragon-left { left: -70px; transform: scaleX(-1); }
+        .dragon-right { right: -70px; }
 
         @keyframes dragonFloat {
             from { transform: translateY(0) scaleX(-1); }
             to { transform: translateY(-15px) scaleX(-1); }
         }
-        /* Penyesuaian animasi naga kanan karena tidak di-flip */
+        /* Penyesuaian animasi naga kanan */
         .dragon-right { animation: dragonFloatRight 2s infinite alternate ease-in-out; }
         @keyframes dragonFloatRight {
             from { transform: translateY(0); }
@@ -109,14 +111,14 @@
 
 <div class="hero">
     <div class="hero-text">
-        <h1>OMBAK KEMAKMURAN<br><span style="color: gold;">BONUS TERBADASS</span></h1>
+        <h1>CLICKBADDIE<br><span style="color: gold;">BONUS TERBADASS</span></h1>
         <center><button class="btn-main">MAIN SEKARANG</button></center>
     </div>
 </div>
 
 <div class="jackpot-wrap">
-    <img src="https://www.pngplay.com/wp-content/uploads/11/Chinese-Dragon-Background-PNG-Image.png" class="dragon-left" alt="Dragon">
-    <img src="https://www.pngplay.com/wp-content/uploads/11/Chinese-Dragon-Background-PNG-Image.png" class="dragon-right" alt="Dragon">
+    <i class="fas fa-dragon dragon-left"></i>
+    <i class="fas fa-dragon dragon-right"></i>
     
     <div style="color: #ff0000; font-weight: bold; letter-spacing: 5px; font-size: 20px;">PROGRESSIVE JACKPOT</div>
     <div class="jackpot-amount" id="jackpot-counter">6.093.215.954</div>
