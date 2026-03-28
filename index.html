@@ -3,112 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SITUS MERAH MERONA</title>
+    <title>CLICKBADDIE - BONUS TERBADASS</title>
     <style>
-        /* BASE STYLE */
-        body { 
-            background-color: #000; 
-            color: #fff; 
-            font-family: 'Arial', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            overflow-x: hidden;
-        }
+        body { background-color: #000; color: #fff; font-family: 'Arial', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
 
-        /* HEADER MERAH */
         header { 
             background: linear-gradient(to bottom, #2a0000, #000); 
             padding: 15px 50px; 
             border-bottom: 2px solid #ff0000; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+            display: flex; justify-content: space-between; align-items: center; 
         }
-        .logo { 
-            color: #ff0000; 
-            font-weight: bold; 
-            font-size: 28px; 
-            text-shadow: 0 0 15px #ff0000; 
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        .logo { color: #ff0000; font-weight: bold; font-size: 28px; text-shadow: 0 0 15px #ff0000; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* BANNER UTAMA MERAH HITAM */
+        /* BANNER DENGAN EFEK GRADASI MERAH */
         .hero { 
             background: radial-gradient(circle, #440000 0%, #000 100%);
-            padding: 120px 20px; 
-            text-align: center; 
-            border-bottom: 3px solid #ff0000; 
+            padding: 100px 20px; text-align: center; border-bottom: 3px solid #ff0000; 
         }
         
-        /* BOX JACKPOT MERAH GLOW */
+        /* BOX JACKPOT MEWAH */
         .jackpot-container { 
-            margin: -60px auto 30px; 
-            width: 90%; 
-            max-width: 700px; 
-            background: rgba(0,0,0,0.95); 
-            border: 3px solid #ff0000; 
-            border-radius: 50px; 
-            padding: 25px; 
-            box-shadow: 0 0 40px rgba(255, 0, 0, 0.6); 
-            text-align: center; 
+            margin: -60px auto 30px; width: 90%; max-width: 700px; 
+            background: rgba(0,0,0,0.95); border: 3px solid #ff0000; border-radius: 50px; 
+            padding: 25px; box-shadow: 0 0 40px rgba(255, 0, 0, 0.6); text-align: center; 
         }
-        .jackpot-title { 
-            color: #ff0000; 
-            font-weight: bold; 
-            letter-spacing: 5px; 
-            font-size: 20px; 
-            margin-bottom: 10px; 
-        }
-        .jackpot-amount { 
-            font-size: clamp(30px, 8vw, 60px); 
-            font-weight: 900; 
-            color: #fff; 
-            margin: 0; 
-            text-shadow: 0 0 20px #ff0000; 
-            font-family: 'Courier New', Courier, monospace;
-        }
+        .jackpot-amount { font-size: clamp(30px, 8vw, 60px); font-weight: 900; color: #fff; text-shadow: 0 0 20px #ff0000; font-family: 'Courier New', monospace; }
 
-        /* TOMBOL MERAH SEXY */
+        /* SECTION PROVIDER (INI YANG BIKIN RAME) */
+        .provider-section { padding: 50px 10%; text-align: center; }
+        .provider-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+            gap: 20px; margin-top: 30px; 
+        }
+        .provider-card { 
+            background: #1a1a1a; border: 1px solid #440000; padding: 15px; 
+            border-radius: 10px; transition: 0.3s; 
+        }
+        .provider-card:hover { border-color: #ff0000; transform: scale(1.05); box-shadow: 0 0 15px #ff0000; }
+        .provider-card img { width: 100%; filter: grayscale(100%) brightness(1.5); transition: 0.3s; }
+        .provider-card:hover img { filter: grayscale(0%); }
+
+        /* TOMBOL */
         .btn-box { margin: 30px 0; }
-        .btn { 
-            padding: 15px 45px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 20px; 
-            margin: 10px; 
-            display: inline-block; 
-            transition: 0.3s; 
-        }
-        .btn-daftar { 
-            background: linear-gradient(to bottom, #ff0000, #8b0000); 
-            color: #fff; 
-            box-shadow: 0 0 15px #ff0000; 
-            border: none;
-        }
-        .btn-login { 
-            background: #222; 
-            color: #ff0000; 
-            border: 1px solid #ff0000; 
-        }
-        .btn:hover { transform: translateY(-5px); filter: brightness(1.2); }
-
-        /* FLOATING CHAT MERAH */
-        .live-chat { 
-            position: fixed; 
-            bottom: 30px; 
-            right: 30px; 
-            background: #ff0000; 
-            color: #fff; 
-            padding: 18px 30px; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            text-decoration: none; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5); 
-            z-index: 1000;
-            font-size: 18px;
-        }
+        .btn { padding: 15px 45px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 20px; margin: 10px; display: inline-block; transition: 0.3s; }
+        .btn-daftar { background: linear-gradient(to bottom, #ff0000, #8b0000); color: #fff; box-shadow: 0 0 15px #ff0000; border: none; }
+        .btn-login { background: #222; color: #ff0000; border: 1px solid #ff0000; }
+        
+        .live-chat { position: fixed; bottom: 30px; right: 30px; background: #ff0000; color: #fff; padding: 18px 30px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 1000; }
     </style>
 </head>
 <body>
@@ -119,9 +60,8 @@
 </header>
 
 <div class="hero">
-    <h2 style="color: #ff0000; margin: 0; letter-spacing: 2px; font-size: 24px;">SITUS TERPERCAYA DENGAN</h2>
+    <h2 style="color: #ff0000; margin: 0; letter-spacing: 2px;">SITUS TERPERCAYA DENGAN</h2>
     <h1 style="font-size: clamp(30px, 8vw, 55px); margin: 10px 0; text-shadow: 2px 2px 10px #000;">BONUS TERBADASS</h1>
-    
     <div class="btn-box">
         <a href="#" class="btn btn-login">LOGIN</a>
         <a href="#" class="btn btn-daftar">DAFTAR</a>
@@ -129,14 +69,31 @@
 </div>
 
 <div class="jackpot-container">
-    <div class="jackpot-title">PROGRESSIVE JACKPOT</div>
+    <div style="color: #ff0000; font-weight: bold; letter-spacing: 5px; margin-bottom: 10px;">PROGRESSIVE JACKPOT</div>
     <div class="jackpot-amount" id="jackpot-counter">6.091.718.406</div>
 </div>
 
-<a href="#" class="live-chat">💬 Live Chat Merah</a>
+<div class="provider-section">
+    <h3 style="color: gold; border-bottom: 2px solid #ff0000; display: inline-block; padding-bottom: 5px;">TOP GAME PROVIDERS</h3>
+    <div class="provider-grid">
+        <div class="provider-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Pragmatic_Play_logo.svg/1200px-Pragmatic_Play_logo.svg.png" alt="Pragmatic">
+        </div>
+        <div class="provider-card">
+            <img src="https://www.pgsoft.com/images/logo.png" alt="PG Soft">
+        </div>
+        <div class="provider-card">
+            <img src="https://www.microgaming.co.uk/media/1001/microgaming-logo.png" alt="Microgaming">
+        </div>
+        <div class="provider-card">
+            <img src="https://habanerosystems.com/img/logo.png" alt="Habanero">
+        </div>
+    </div>
+</div>
+
+<a href="#" class="live-chat">💬 Live Chat Red</a>
 
 <script>
-    // SCRIPT ANGKA GERAK (JACKPOT)
     let startVal = 6091718406;
     function updateJackpot() {
         startVal += Math.floor(Math.random() * 1500); 
