@@ -5,29 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLICKBADDIE - BONUS TERBADASS</title>
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Arial', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        /* =========================================
+           Opekan CSS Sultan - Konsep Red Sexy
+           Dipindah dari gaya temen kamu ke CLICKBADDIE
+        ========================================= */
 
+        * { box-sizing: border-box; }
+
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            /* RAHASIA 1: Background Radial Gelap Mahal, tapi pantulannya Merah Gelap */
+            background: radial-gradient(circle at top, #3a0000 0%, #1a0000 22%, #050505 55%, #000 100%);
+            color: #fff; 
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* HEADER MERAH */
         header { 
             background: linear-gradient(to bottom, #2a0000, #000); 
             padding: 15px 50px; 
             border-bottom: 2px solid #ff0000; 
             display: flex; justify-content: space-between; align-items: center; 
         }
-        .logo { color: #ff0000; font-weight: bold; font-size: 28px; text-shadow: 0 0 15px #ff0000; letter-spacing: 2px; text-transform: uppercase; }
+        .logo { 
+            color: #ff0000; 
+            font-weight: bold; 
+            font-size: 28px; 
+            text-shadow: 0 0 15px #ff0000; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+        }
 
+        /* HERO AREA DENGAN TULISAN BESAR */
         .hero { 
-            background: radial-gradient(circle, #440000 0%, #000 100%);
-            padding: 100px 20px; text-align: center; border-bottom: 3px solid #ff0000; 
+            padding: 120px 20px; text-align: center; border-bottom: 3px solid #ff0000; 
+            position: relative; z-index: 1;
+        }
+        .hero-title { 
+            font-size: clamp(30px, 8vw, 55px); 
+            margin: 10px 0; 
+            /* Cahaya Merah pada Teks */
+            text-shadow: 0 0 14px rgba(255, 0, 0, 0.95); 
+            font-weight: 900; 
         }
         
+        /* RAHASIA 2: Box Jackpot Bergetar & Menyala Merah */
         .jackpot-container { 
             margin: -60px auto 30px; width: 90%; max-width: 700px; 
-            background: rgba(0,0,0,0.95); border: 3px solid #ff0000; border-radius: 50px; 
-            padding: 25px; box-shadow: 0 0 40px rgba(255, 0, 0, 0.6); text-align: center; 
+            background: rgba(0,0,0,0.95); 
+            border: 3px solid #ff0000; 
+            border-radius: 50px; 
+            padding: 25px; 
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.6); 
+            text-align: center; 
+            position: relative; z-index: 10;
         }
-        .jackpot-amount { font-size: clamp(30px, 8vw, 60px); font-weight: 900; color: #fff; text-shadow: 0 0 20px #ff0000; font-family: 'Courier New', monospace; }
+        .jackpot-title { color: #ff0000; font-weight: bold; letter-spacing: 5px; font-size: 20px; margin-bottom: 10px; }
+        .jackpot-amount { 
+            font-size: clamp(30px, 8vw, 60px); 
+            font-weight: 900; 
+            color: #fff; 
+            text-shadow: 0 0 20px #ff0000; 
+            font-family: 'Courier New', monospace; 
+            letter-spacing: 2px;
+            /* Panggil Animasi Sultan di Sini */
+            animation: jackpotGlowRed 1s infinite alternate;
+        }
 
-        /* SECTION PROVIDER DENGAN GAMBAR BARU */
+        /* RAHASIA ANIMASI 1: Jackpot Bergetar & Kedap-Kedip Merah */
+        @keyframes jackpotGlowRed {
+            from {
+                text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+                transform: scale(1);
+            }
+            to {
+                text-shadow: 0 0 25px rgba(255, 0, 0, 1);
+                transform: scale(1.04); /* Bergetar Gede-Kecil dikit */
+            }
+        }
+
+        /* TOMBOL MERAH SIBUK */
+        .btn-box { margin: 30px 0; }
+        .btn { padding: 15px 45px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 20px; margin: 10px; display: inline-block; transition: 0.3s; }
+        
+        /* Tombol Login Standar */
+        .btn-login { background: #222; color: #ff0000; border: 1px solid #ff0000; }
+        
+        /* Tombol Daftar Super Aktif, Merah Sexy */
+        .btn-daftar { 
+            color: #fff; 
+            border: none;
+            /* RAHASIA 3: Warna Merah Jalan-Jalan */
+            background: linear-gradient(45deg, #ff0000, #8b0000, #ff4444, #ff0000);
+            background-size: 300%;
+            /* Panggil Animasi Gabungan: Pulse, Shine, Glow */
+            animation: 
+                redGlow 1s infinite alternate,
+                redPulse 1s infinite,
+                redShine 2s linear infinite;
+        }
+
+        /* RAHASIA ANIMASI 2: Efek Cahaya Merah Tombol */
+        @keyframes redGlow { from { box-shadow: 0 0 5px #ff0000; } to { box-shadow: 0 0 25px #ff4444; } }
+        /* RAHASIA ANIMASI 3: Efek Detak Jantung Tombol */
+        @keyframes redPulse { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+        /* RAHASIA ANIMASI 4: Efek Warna Merah Jalan-Jalan */
+        @keyframes redShine { 0% { background-position: 0% } 100% { background-position: 300% } }
+
+        /* PROVIDER SECTION */
         .provider-section { padding: 50px 10%; text-align: center; }
         .provider-grid { 
             display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
@@ -40,13 +128,29 @@
         .provider-card:hover { border-color: #ff0000; transform: scale(1.05); box-shadow: 0 0 15px #ff0000; background: #1a1a1a; }
         .provider-card img { max-width: 100%; height: auto; filter: brightness(1.2); }
 
-        .btn-box { margin: 30px 0; }
-        .btn { padding: 15px 45px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 20px; margin: 10px; display: inline-block; transition: 0.3s; }
-        .btn-daftar { background: linear-gradient(to bottom, #ff0000, #8b0000); color: #fff; box-shadow: 0 0 15px #ff0000; border: none; }
-        .btn-login { background: #222; color: #ff0000; border: 1px solid #ff0000; }
-        
-        /* LIVE CHAT TANPA KATA RED */
-        .live-chat { position: fixed; bottom: 30px; right: 30px; background: #ff0000; color: #fff; padding: 18px 30px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 1000; }
+        /* RAHASIA 4: Marquee Halus Bar */
+        .marquee-bar {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 110px 1fr 180px; align-items: center;
+            /* Warna Merah Mewah buat Marquee */
+            background: #fff; color: #000;
+            border-top: 2px solid #ff0000; border-bottom: 2px solid #ff0000;
+            font-size: 13px; font-weight: bold;
+        }
+        .marquee-label, .marquee-date { background: #4a0000; color: #ff0000; padding: 8px 12px; font-weight: bold; }
+        .marquee-text { padding: 8px 12px; white-space: nowrap; overflow: hidden; }
+        .marquee-text span { display: inline-block; padding-left: 100%; animation: berjalan 20s linear infinite; }
+        @keyframes berjalan { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+        /* FLOATING CHAT MERAH PULSE */
+        .live-chat { 
+            position: fixed; bottom: 30px; right: 30px; 
+            background: #ff0000; color: #fff; padding: 18px 30px; 
+            border-radius: 50px; font-weight: bold; text-decoration: none; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 1000;
+            /* Chat juga ikut Pulse dikit biar ramai */
+            animation: redPulse 1.2s infinite;
+        }
     </style>
 </head>
 <body>
@@ -58,20 +162,28 @@
 
 <div class="hero">
     <h2 style="color: #ff0000; margin: 0; letter-spacing: 2px;">SITUS TERPERCAYA DENGAN</h2>
-    <h1 style="font-size: clamp(30px, 8vw, 55px); margin: 10px 0; text-shadow: 2px 2px 10px #000;">BONUS TERBADASS</h1>
+    <h1 class="hero-title">BONUS TERBADASS</h1>
     <div class="btn-box">
         <a href="#" class="btn btn-login">LOGIN</a>
-        <a href="#" class="btn btn-daftar">DAFTAR</a>
+        <a href="#" class="btn btn-daftar">DAFTAR SEKARANG</a>
     </div>
 </div>
 
 <div class="jackpot-container">
-    <div style="color: #ff0000; font-weight: bold; letter-spacing: 5px; margin-bottom: 10px;">PROGRESSIVE JACKPOT</div>
+    <div class="jackpot-title">PROGRESSIVE JACKPOT</div>
     <div class="jackpot-amount" id="jackpot-counter">6.091.718.406</div>
 </div>
 
+<div class="marquee-bar">
+    <div class="marquee-label">INFO UPDATE</div>
+    <div class="marquee-text">
+        <span>Selamat Datang di CLICKBADDIE! Nikmati Bonus Terbadass dan Event Eksklusif Minggu Ini. Deposit & Withdraw Tercepat!</span>
+    </div>
+    <div class="marquee-date" id="live-date">21 July 2025</div>
+</div>
+
 <div class="provider-section">
-    <h3 style="color: gold; border-bottom: 2px solid #ff0000; display: inline-block; padding-bottom: 5px;">TOP GAME PROVIDERS</h3>
+    <h3 style="color: #ff0000; border-bottom: 2px solid #ff0000; display: inline-block; padding-bottom: 5px;">TOP GAME PROVIDERS</h3>
     <div class="provider-grid">
         <div class="provider-card">
             <img src="https://img.logo.dev/pragmaticplay.com?token=pk_Yy_Yy_Yy" onerror="this.src='https://placehold.jp/24/ff0000/ffffff/150x50.png?text=PRAGMATIC'" alt="Pragmatic">
@@ -91,12 +203,17 @@
 <a href="#" class="live-chat">💬 Live Chat</a>
 
 <script>
+    // SCRIPT ANGKA GERAK (JACKPOT)
     let startVal = 6091718406;
     function updateJackpot() {
         startVal += Math.floor(Math.random() * 1500); 
         document.getElementById("jackpot-counter").innerText = startVal.toLocaleString('id-ID');
     }
     setInterval(updateJackpot, 1500); 
+
+    // Script buat Date otomatis di Marquee
+    let d = new Date();
+    document.getElementById("live-date").innerText = d.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'});
 </script>
 
 </body>
