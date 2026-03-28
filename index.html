@@ -3,98 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLICKBADDIE - RED DRAGON REBORN</title>
+    <title>CLICKBADDIE - THE REAL DRAGON SULTAN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; }
         body { 
             margin: 0; font-family: 'Arial', sans-serif; 
-            background: radial-gradient(circle at top, #440000 0%, #1a0000 30%, #000 100%);
+            /* Background Radial Gelap Mewah */
+            background: radial-gradient(circle at top, #3a0000 0%, #1a0000 30%, #000 100%);
             color: #fff; overflow-x: hidden;
         }
 
-        /* NAVBAR DENGAN IKON (KOTAK MERAH ATAS) */
-        .navbar {
-            background: linear-gradient(to bottom, #660000, #000);
-            border-bottom: 2px solid #ff0000;
-            padding: 15px 0;
+        /* 1. TOPBAR (BRAND & TOMBOL SULTAN) */
+        .topbar {
+            background: linear-gradient(to right, #2a0000, #4d0000, #2a0000);
+            border-bottom: 2px solid gold;
+            padding: 10px 50px;
+            display: flex; justify-content: space-between; align-items: center;
             position: sticky; top: 0; z-index: 1000;
         }
+        .brand { 
+            color: gold; font-weight: bold; font-size: 28px; 
+            text-shadow: 0 0 15px gold, 0 0 5px #ff0000; letter-spacing: 2px;
+            text-transform: uppercase; text-decoration: none;
+        }
+        .top-actions { display: flex; gap: 10px; }
+        .btn-top { 
+            padding: 8px 18px; border-radius: 4px; font-weight: bold; 
+            font-size: 12px; text-transform: uppercase; text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn-masuk { background: #1a1a1a; color: gold; border: 1px solid gold; }
+        .btn-masuk:hover { background: gold; color: #000; box-shadow: 0 0 10px gold; }
+        .btn-daftar { 
+            background: linear-gradient(to bottom, #fff1a8, #ffd700, #c99600); 
+            color: #111; box-shadow: 0 0 12px rgba(255, 215, 0, 0.7); border: none;
+        }
+        .btn-daftar:hover { transform: scale(1.05); }
+
+        /* 2. SLIDER UTAMA */
+        .slider-container {
+            max-width: 1100px; margin: 20px auto;
+            position: relative; overflow: hidden;
+            border: 2px solid #ff0000; border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+            height: 380px; 
+        }
+        .slides { display: flex; height: 100%; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .slide { min-width: 100%; height: 100%; position: relative; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.8); }
+        
+        .prev, .next {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(255, 0, 0, 0.7); color: white; border: none;
+            width: 45px; height: 45px; cursor: pointer; border-radius: 50%; 
+            font-weight: bold; z-index: 100; transition: 0.3s;
+        }
+        .next { right: 15px; } .prev { left: 15px; }
+        .prev:hover, .next:hover { background: #fff; color: #ff0000; }
+
+        /* 3. MENU IKON (DI BAWAH SLIDER) */
+        .navbar { background: #111; padding: 15px 0; border-bottom: 2px solid #ff0000; }
         .nav-menu {
             list-style: none; padding: 0; margin: 0;
-            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;
         }
-        .nav-item { 
-            text-align: center; color: #fff; text-decoration: none; 
-            transition: 0.3s; width: 80px;
-        }
-        .nav-item i { 
-            display: block; font-size: 24px; color: #ff0000; 
-            margin-bottom: 5px; text-shadow: 0 0 10px #ff0000;
-        }
-        .nav-item span { font-size: 10px; font-weight: bold; text-transform: uppercase; display: block; }
+        .nav-item { text-align: center; color: #fff; text-decoration: none; transition: 0.3s; width: 85px; }
+        .nav-item i { display: block; font-size: 26px; color: #ff0000; margin-bottom: 5px; text-shadow: 0 0 12px #ff0000; }
+        .nav-item span { font-size: 11px; font-weight: bold; text-transform: uppercase; display: block; }
         .nav-item:hover { transform: translateY(-5px); }
         .nav-item:hover i { color: gold; text-shadow: 0 0 15px gold; }
 
-        /* BANNER UTAMA (HERO) */
-        .hero {
-            max-width: 1100px; margin: 20px auto;
-            border: 2px solid #ff0000; border-radius: 15px;
-            height: 350px; overflow: hidden;
-            /* Menggunakan gambar stabil dari server publik */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.jp/40/000000/ff0000/1000x400.png?text=CLICKBADDIE+BANNER');
-            background-size: cover; background-position: center;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
-        }
-        .hero-text h1 { font-size: 45px; text-align: center; text-shadow: 0 0 20px #ff0000; margin: 0; }
-        .btn-main { background: #ff0000; color: #fff; border: none; padding: 15px 40px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 20px; box-shadow: 0 0 15px #ff0000; }
-
-        /* KOTAK JACKPOT DENGAN NAGA CSS (KOTAK MERAH BAWAH) */
+        /* 4. KOTAK JACKPOT DENGAN NAGA REALISTIK */
         .jackpot-wrap {
-            max-width: 850px; margin: 60px auto;
+            max-width: 850px; margin: 80px auto 40px;
             position: relative;
             background: rgba(0,0,0,0.9);
             border-top: 3px solid #ff0000; border-bottom: 3px solid #ff0000;
-            padding: 30px; text-align: center;
-            box-shadow: inset 0 0 50px #440000, 0 0 25px #ff0000;
+            padding: 35px; text-align: center;
+            box-shadow: inset 0 0 50px #440000, 0 0 30px #ff0000;
+            z-index: 10;
         }
         
-        /* RAHASIA: NAGA MURNI PAKAI KODE CSS IKON */
-        .dragon-left, .dragon-right {
-            position: absolute; top: -20px; font-size: 120px; color: #ff0000;
+        /* Gambar Naga Realistik (Memanggil Gambar .png Transparan HD) */
+        .dragon {
+            position: absolute; width: 180px; height: auto;
             filter: drop-shadow(0 0 15px #ff0000);
             z-index: 100;
-            animation: dragonFloat 2s infinite alternate ease-in-out;
-            pointer-events: none; /* Biar naga ga ganggu klik */
+            pointer-events: none;
+            /* Animasi Naga Naik Turun Pelan */
+            animation: dragonFloat 2.5s infinite alternate ease-in-out;
         }
-        .dragon-left { left: -70px; transform: scaleX(-1); }
-        .dragon-right { right: -70px; }
+        /* Menggunakan link gambar naga realistik yang stabil */
+        .dragon-left { 
+            top: -40px; left: -100px; 
+            transform: scaleX(-1); 
+            background: url('https://www.pngmart.com/files/16/Red-Dragon-Transparent-Background.png') no-repeat center/contain;
+            height: 200px; /* Sesuaikan tinggi naga */
+        }
+        .dragon-right { 
+            top: -40px; right: -100px; 
+            background: url('https://www.pngmart.com/files/16/Red-Dragon-Transparent-Background.png') no-repeat center/contain;
+            height: 200px; /* Sesuaikan tinggi naga */
+        }
 
-        @keyframes dragonFloat {
-            from { transform: translateY(0) scaleX(-1); }
-            to { transform: translateY(-15px) scaleX(-1); }
-        }
-        /* Penyesuaian animasi naga kanan */
-        .dragon-right { animation: dragonFloatRight 2s infinite alternate ease-in-out; }
-        @keyframes dragonFloatRight {
-            from { transform: translateY(0); }
-            to { transform: translateY(-15px); }
-        }
+        @keyframes dragonFloat { from { transform: translateY(0); } to { transform: translateY(-20px); } }
 
         .jackpot-amount { 
-            font-size: clamp(35px, 10vw, 65px); 
-            font-weight: 900; color: #fff; 
-            text-shadow: 0 0 25px #ff0000; 
-            font-family: 'Courier New', monospace;
-            display: block; margin-top: 10px;
+            font-size: clamp(35px, 10vw, 65px); font-weight: 900; 
+            color: #fff; text-shadow: 0 0 25px #ff0000; 
+            font-family: 'Courier New', monospace; display: block; margin-top: 15px;
         }
 
-        /* LIVE CHAT */
-        .live-chat { position: fixed; bottom: 25px; right: 25px; background: #ff0000; color: #fff; padding: 15px 30px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 0 20px #ff0000; z-index: 1000; }
+        /* 5. LIVE CHAT SULTAN (MEMBESAR MENGEKIL) */
+        .live-chat { 
+            position: fixed; bottom: 30px; right: 30px; 
+            background: linear-gradient(to bottom, #fff1a8, #ffd700); 
+            color: #111; padding: 18px 35px; border-radius: 50px; 
+            font-weight: bold; text-decoration: none; 
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6); 
+            z-index: 9999;
+            animation: pulseChat 1.2s infinite;
+        }
+        @keyframes pulseChat { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
     </style>
 </head>
 <body>
+
+<header class="topbar">
+    <a href="#" class="brand">CLICKBADDIE</a>
+    <div class="top-actions">
+        <a href="#" class="btn-top btn-masuk">MASUK</a>
+        <a href="#" class="btn-top btn-daftar">DAFTAR</a>
+    </div>
+</header>
+
+<div class="slider-container">
+    <div class="slides" id="slider">
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?q=80&w=1200&auto=format&fit=crop" alt="Promo 1">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop" alt="Promo 2">
+        </div>
+        <div class="slide">
+            <img src="https://placehold.jp/40/000000/ff0000/1200x380.png?text=CLICKBADDIE+EVENT" alt="Promo 3">
+        </div>
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
 
 <nav class="navbar">
     <div class="nav-menu">
@@ -109,26 +167,32 @@
     </div>
 </nav>
 
-<div class="hero">
-    <div class="hero-text">
-        <h1>CLICKBADDIE<br><span style="color: gold;">BONUS TERBADASS</span></h1>
-        <center><button class="btn-main">MAIN SEKARANG</button></center>
-    </div>
-</div>
-
 <div class="jackpot-wrap">
-    <i class="fas fa-dragon dragon-left"></i>
-    <i class="fas fa-dragon dragon-right"></i>
+    <div class="dragon dragon-left"></div>
+    <div class="dragon dragon-right" style="transform: scale(1);"></div>
     
     <div style="color: #ff0000; font-weight: bold; letter-spacing: 5px; font-size: 20px;">PROGRESSIVE JACKPOT</div>
-    <div class="jackpot-amount" id="jackpot-counter">6.093.215.954</div>
+    <div class="jackpot-amount" id="jackpot-counter">6.091.718.406</div>
 </div>
 
 <a href="#" class="live-chat">💬 Live Chat</a>
 
 <script>
-    // Script Angka Jackpot Jalan
-    let val = 6093215954;
+    // Script SLIDER otomatis & manual
+    let currentSlide = 0;
+    const slides = document.getElementById('slider');
+    const totalSlides = 3;
+
+    function moveSlide(step) {
+        currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Auto geser tiap 4 detik
+    setInterval(() => moveSlide(1), 4000);
+
+    // Script ANGKA GERAK (JACKPOT)
+    let val = 6091718406;
     setInterval(() => {
         val += Math.floor(Math.random() * 2500);
         document.getElementById("jackpot-counter").innerText = val.toLocaleString('id-ID');
