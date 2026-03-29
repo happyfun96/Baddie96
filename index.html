@@ -133,17 +133,30 @@
         }
 
         /* LIVE CHAT */
-    <div class="livechat-wrapper" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-    <a href="https://direct.lc.chat/1351372" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
+ <div style="position: fixed; bottom: 20px; right: 20px; z-index: 999999; display: flex; align-items: center; gap: 12px; pointer-events: auto;">
+    <a href="https://direct.lc.chat/1351372" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
         
-        <img src="https://i.postimg.cc/WpCT54Jk/download.png" alt="Live Chat Ikon" style="width: 55px; height: 55px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6)); animation: pulseChat 2s infinite;">
+        <img src="https://i.postimg.cc/WpCT54Jk/download.png" alt="Ikon Live Chat" style="width: 55px; height: 55px; filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); animation: pulseChat 2s infinite;">
         
-        <div style="background: linear-gradient(to bottom, #fff1a8, #ffd700); color: #000; padding: 10px 22px; border-radius: 50px; font-weight: bold; font-size: 14px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); display: flex; align-items: center; gap: 8px; border: 1px solid #c99600;">
+        <div style="background: linear-gradient(to bottom, #fff1a8, #ffd700); color: #000; padding: 12px 25px; border-radius: 50px; font-weight: bold; font-size: 14px; box-shadow: 0 5px 20px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 8px; border: 2px solid #c99600;">
             <span style="color: #00ff00; font-size: 18px; animation: blinker 1s linear infinite;">●</span> LIVE CHAT
         </div>
     </a>
 </div>
 
+<style>
+/* Animasi Berdenyut Pelan */
+@keyframes pulseChat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Animasi Titik Online Berkedip */
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+</style>
 <style>
 /* Animasi Ikon Berdenyut Pelan */
 @keyframes pulseChat {
