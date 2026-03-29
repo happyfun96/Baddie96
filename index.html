@@ -7,70 +7,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --gold: linear-gradient(to bottom, #fff1a8, #ffd700, #c99600);
-            --red-glow: 0 0 15px #ff0000;
-            --gold-glow: 0 0 15px #ffd700;
+            /* Tema Warna Merah Merona & Emas */
+            --red-bright: #ff0000;
+            --red-dark: #3a0000;
+            --red-deep: #1a0000;
+            --gold-bright: #ffd700;
+            --gold-soft: #fff1a8;
+            --gold-gradient: linear-gradient(to bottom, #fff1a8, #ffd700, #c99600);
+            
+            /* Efek Glow (Kilau) */
+            --red-glow: 0 0 15px rgba(255, 0, 0, 0.8);
+            --gold-glow: 0 0 15px rgba(255, 215, 0, 0.8);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: radial-gradient(circle at top, #3a0000 0%, #1a0000 30%, #000 100%);
+            background: radial-gradient(circle at top, var(--red-dark) 0%, var(--red-deep) 30%, #000 100%);
             color: #fff; overflow-x: hidden;
         }
 
-        /* 1. TOPBAR & ANNOUNCEMENT */
+        /* 1. TOPBAR & ANNOUNCEMENT (Struktur Teman, Warna Merah) */
         .topbar {
             background: linear-gradient(to bottom, #2a0000, #4d0000, #2a0000);
-            border-bottom: 2px solid gold;
+            border-bottom: 2px solid var(--gold-bright);
             padding: 10px 20px;
             display: flex; justify-content: space-between; align-items: center;
             position: sticky; top: 0; z-index: 1000;
         }
         .brand { 
-            color: gold; font-weight: bold; font-size: 24px; 
+            color: var(--gold-bright); font-weight: bold; font-size: 24px; 
             text-shadow: var(--gold-glow); letter-spacing: 1px;
             text-decoration: none; text-transform: uppercase;
         }
         .btn-reg {
-            background: var(--gold); color: #000; padding: 8px 15px;
+            background: var(--gold-gradient); color: #000; padding: 8px 15px;
             border-radius: 5px; font-weight: bold; text-decoration: none; font-size: 14px;
         }
 
         .subinfo {
-            background: #ff0000; color: white; text-align: center;
+            background: var(--red-bright); color: white; text-align: center;
             font-size: 12px; font-weight: bold; padding: 5px 0;
-            letter-spacing: 2px; box-shadow: 0 0 10px #ff0000;
+            letter-spacing: 2px; box-shadow: var(--red-glow);
         }
 
-        /* 2. MARQUEE & CLOCK */
+        /* 2. MARQUEE & CLOCK (Fitur Teman, Warna Merah) */
         .marquee-bar {
             background: rgba(0,0,0,0.8); border-bottom: 1px solid #444;
             display: flex; align-items: center; padding: 8px 10px; gap: 10px;
         }
-        .marquee-label { background: #ff0000; padding: 2px 10px; border-radius: 3px; font-size: 12px; font-weight: bold; }
-        .marquee-text { flex: 1; overflow: hidden; white-space: nowrap; font-size: 13px; color: #ffd700; }
+        .marquee-label { background: var(--red-bright); padding: 2px 10px; border-radius: 3px; font-size: 12px; font-weight: bold; }
+        .marquee-text { flex: 1; overflow: hidden; white-space: nowrap; font-size: 13px; color: var(--gold-bright); }
         .marquee-text span { display: inline-block; animation: scroll 20s linear infinite; }
         @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
         #liveClock { font-family: monospace; font-size: 13px; color: #aaa; min-width: 140px; text-align: right; }
 
-        /* 3. HERO SLIDER */
-        .hero { max-width: 1100px; margin: 15px auto; position: relative; border-radius: 10px; overflow: hidden; border: 1px solid #ff0000; }
+        /* 3. HERO SLIDER (Struktur Teman, Ukuran Diperbaiki) */
+        .hero { max-width: 1100px; margin: 15px auto; position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--red-bright); box-shadow: var(--red-glow); }
         .slides { display: flex; transition: 0.5s; height: 350px; }
         .slide { min-width: 100%; position: relative; }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* 4. JACKPOT AREA (THE DRAGON) */
+        /* 4. JACKPOT AREA (Konsep Naga Saya + Efek Merah Merona) */
         .jackpot-wrap {
-            max-width: 800px; margin: 40px auto; position: relative;
-            background: rgba(0,0,0,0.7); border: 2px solid #ff0000;
+            max-width: 800px; margin: 60px auto 40px; position: relative;
+            background: rgba(0,0,0,0.7); border: 2px solid var(--red-bright);
             padding: 30px; text-align: center; border-radius: 20px;
             box-shadow: inset 0 0 30px #400, var(--red-glow);
         }
         .dragon {
             position: absolute; width: 180px; top: -70px; z-index: 10;
-            filter: drop-shadow(0 0 10px #ff0000);
+            filter: drop-shadow(0 0 10px var(--red-bright));
             animation: float 3s infinite alternate ease-in-out;
         }
         .dragon-l { left: -100px; transform: scaleX(-1); }
@@ -79,13 +87,14 @@
 
         .jackpot-amount {
             font-size: 50px; font-weight: 900; display: block; margin-top: 10px;
-            background: linear-gradient(to bottom, #fff, #ffd700, #ff8c00);
+            background: linear-gradient(to bottom, #fff, var(--gold-bright), #ff8c00);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             font-family: 'Courier New', monospace;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
         }
 
-        /* 5. BUKTI JACKPOT GRID */
-        .section-title { text-align: center; margin: 40px 0 20px; color: gold; text-shadow: var(--gold-glow); }
+        /* 5. GRID PEMENANG (Fitur Teman, Warna Merah) */
+        .section-title { text-align: center; margin: 40px 0 20px; color: var(--gold-bright); text-shadow: var(--gold-glow); text-transform: uppercase; letter-spacing: 2px; }
         .game-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px; max-width: 1100px; margin: 0 auto 50px; padding: 0 20px;
@@ -94,22 +103,24 @@
             background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
             overflow: hidden; transition: 0.3s;
         }
-        .game-card:hover { border-color: #ff0000; transform: translateY(-5px); }
-        .game-thumb { height: 160px; background-size: cover; background-position: center; }
-        .game-info { padding: 15px; }
-        .game-info h3 { font-size: 16px; color: gold; margin-bottom: 5px; }
+        .game-card:hover { border-color: var(--red-bright); transform: translateY(-5px); box-shadow: var(--red-glow); }
+        .game-thumb { height: 160px; background-size: cover; background-position: center; filter: brightness(0.9); }
+        .game-info { padding: 15px; border-top: 1px solid #333; }
+        .game-info h3 { font-size: 16px; color: var(--gold-bright); margin-bottom: 5px; }
         .game-info p { font-size: 13px; color: #ccc; line-height: 1.4; }
 
-        /* LIVE CHAT FLOAT */
+        /* LIVE CHAT FLOAT (Warna Emas-Merah) */
         .lc-float {
             position: fixed; bottom: 20px; right: 20px; z-index: 1000;
-            transition: 0.3s;
+            transition: 0.3s; animation: pulse 1.5s infinite;
         }
         .lc-float:hover { transform: scale(1.1); }
-        .lc-float img { width: 120px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .lc-float img { width: 120px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); border: 1px solid var(--gold-bright); }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); } }
 
+        /* Responsive Fix (Agar Naga Hilang di HP) */
         @media (max-width: 768px) {
-            .dragon { display: none; } /* Hilangkan naga di HP biar gak sempit */
+            .dragon { display: none; }
             .jackpot-amount { font-size: 32px; }
             .hero { height: 200px; margin: 10px; }
             .slides { height: 200px; }
@@ -138,19 +149,19 @@
 
 <section class="hero">
     <div class="slides" id="slider">
-        <div class="slide"><img src="https://i.postimg.cc/sDqP68FW/naga.jpg"></div>
-        <div class="slide"><img src="https://i.postimg.cc/sDqP68FW/naga.jpg"></div>
+        <div class="slide"><img src="https://i.postimg.cc/sDqP68FW/naga.jpg"></div> <div class="slide"><img src="https://i.imgur.com/QAemPSD.png"></div>
+        <div class="slide"><img src="https://i.imgur.com/8tXSAoK.png"></div>
     </div>
 </section>
 
 <section class="jackpot-wrap">
     <img src="https://www.pngmart.com/files/16/Red-Dragon-Transparent-Background.png" class="dragon dragon-l">
     <img src="https://www.pngmart.com/files/16/Red-Dragon-Transparent-Background.png" class="dragon dragon-r">
-    <div style="color: #ff0000; font-weight: bold; letter-spacing: 3px;">PROGRESSIVE JACKPOT</div>
+    <div style="color: var(--red-bright); font-weight: bold; letter-spacing: 3px; text-shadow: var(--red-glow);">PROGRESSIVE JACKPOT</div>
     <div class="jackpot-amount" id="jackpotValue">0</div>
 </section>
 
-<h2 class="section-title"><i class="fas fa-trophy"></i> BUKTI PEMENANG HARI INI</h2>
+<h2 class="section-title"><i class="fas fa-trophy" style="color:var(--red-bright)"></i> BUKTI PEMENANG HARI INI</h2>
 <div class="game-grid">
     <div class="game-card">
         <div class="game-thumb" style="background-image:url('https://i.imgur.com/ZQqotAo.png');"></div>
@@ -166,6 +177,13 @@
             <p>"Naga merah emang bawa hoki. Rekomendasi banget buat yang mau maxwin."</p>
         </div>
     </div>
+    <div class="game-card">
+        <div class="game-thumb" style="background-image:url('https://i.imgur.com/FHKwluF.png');"></div>
+        <div class="game-info">
+            <h3>User: SULTAN_BADDIE</h3>
+            <p>"Situs paling merah merona, gacor parah! Depo 50k jadi 5Juta. Mantap."</p>
+        </div>
+    </div>
 </div>
 
 <a href="#" class="lc-float">
@@ -173,7 +191,7 @@
 </a>
 
 <script>
-    // 1. LIVE CLOCK
+    // 1. LIVE CLOCK (Dari Teman)
     function updateClock() {
         const now = new Date();
         const d = String(now.getDate()).padStart(2,'0');
@@ -187,33 +205,34 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    // 2. COUNTING JACKPOT (Animate from 0)
+    // 2. COUNTING JACKPOT ANIMATION (Dari Teman)
     let finalValue = 6091718406;
     let startValue = 0;
-    let duration = 2000; // 2 detik
+    let duration = 2500; // 2.5 detik
     let obj = document.getElementById("jackpotValue");
+    let startTime = null;
 
     function animateValue(timestamp) {
         if (!startTime) startTime = timestamp;
         let progress = timestamp - startTime;
         let current = Math.min(Math.floor((progress / duration) * finalValue), finalValue);
-        obj.innerText = current.toLocaleString('id-ID');
+        obj.innerText = current.toLocaleString('id-ID'); // Format Indonesia
         if (progress < duration) {
             window.requestAnimationFrame(animateValue);
         } else {
+            // Setelah selesai hitung, tambah terus angkanya
             setInterval(() => {
-                finalValue += Math.floor(Math.random() * 5000);
+                finalValue += Math.floor(Math.random() * 5000) + 1000;
                 obj.innerText = finalValue.toLocaleString('id-ID');
             }, 1000);
         }
     }
-    let startTime = null;
     window.requestAnimationFrame(animateValue);
 
-    // 3. SIMPLE SLIDER
+    // 3. SLIDER LOGIC (Dari Teman)
     let cur = 0;
     setInterval(() => {
-        cur = (cur + 1) % 2;
+        cur = (cur + 1) % 3; // Sesuaikan jumlah slide (3)
         document.getElementById("slider").style.transform = `translateX(-${cur * 100}%)`;
     }, 4000);
 </script>
